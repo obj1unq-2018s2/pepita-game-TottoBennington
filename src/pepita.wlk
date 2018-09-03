@@ -10,22 +10,19 @@ object pepita {
 	method come(comida) {
 		energia = energia + comida.energia()
 		self.transformacion()
-		/* 
-		if(imagen == "pepita-gorda-raw.png"){
-			game.say(self, "estoy muy llena!")
-		}else if(imagen == "pepita.png"){
-			game.say(self, "quiero más!")
-		}*/
 	}
 	
 	method volaHacia(unaCiudad) {
 		if(energia > self.energiaParaVolar(self.distanciaEntreMiYCiudad(unaCiudad))){
-			// si la energia de pepita es > a la energia que gastaria luego de volar
-			// hacia donde quiere 
-			if (ciudad != unaCiudad) { // si ciudad es != de la ciudad a la que quiero volar
+			/* si la energia de pepita es > a la energia que gastaria luego de volar
+			 *  hacia donde quiere 
+			 */
+			if (ciudad != unaCiudad) { 
+			// si ciudad es != de la ciudad a la que quiero volar
 				self.move(unaCiudad.posicion()) // voy
 				ciudad = unaCiudad //la asigno
-			}else if(ciudad == unaCiudad){ // si ya estoy en ciudad 'unaCiudad' entonces digo lo siguiente
+			}else if(ciudad == unaCiudad){
+			 // si ya estoy en ciudad 'unaCiudad' entonces digo lo siguiente
 				game.say(self, "Ya estoy en: " + ciudad.toString() + "!")
 			}
 		}else{
@@ -34,7 +31,6 @@ object pepita {
 	}
 
 	method energiaParaVolar(distancia) = 15 + 5 * distancia
-	// tomamos distancia cada celda del tablero
 	
 	method distanciaEntreMiYCiudad(ciudadALaQueQuieroIr) = self.posicion().distance(ciudadALaQueQuieroIr.posicion())
 
@@ -52,5 +48,8 @@ object pepita {
 	method serAlimentado(){
 		roque.darDeComerA(self)
 	}
+	
+	//----------EVITAR ERROR DE QUE NO ENTIENDE EL MSJ--------
+	// Esto sucede porque centre todas las colisiones en roque
 	method serGuardadoEnRoque(){} // para evitar error de que no entiende el mensaje
 }

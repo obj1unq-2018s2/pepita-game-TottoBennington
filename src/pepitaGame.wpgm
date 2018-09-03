@@ -20,11 +20,12 @@ program PepitaGame {
 	game.addVisualCharacter(roque)
 	game.addVisual(pepita)
 
-//  COLISIONES
-	//game.whenCollideDo(alpiste, {persona => persona.guardarAlimento(alpiste)})
+//  COLISIONES  --- las centre en roque como por sugerencia de nicolas ---
 	game.whenCollideDo(roque, {alimento => alimento.serGuardadoEnRoque()})
-	//game.whenCollideDo(manzana, {persona => persona.guardarAlimento(manzana)})
 	game.whenCollideDo(roque, {ave => ave.serAlimentado()})
+//------------ANTIGUAS-------------------
+	//game.whenCollideDo(alpiste, {persona => persona.guardarAlimento(alpiste)})
+	//game.whenCollideDo(manzana, {persona => persona.guardarAlimento(manzana)})
 
 //	TECLADO
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }

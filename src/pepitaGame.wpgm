@@ -21,9 +21,10 @@ program PepitaGame {
 	game.addVisual(pepita)
 
 //  COLISIONES
-	game.whenCollideDo(alpiste, {persona => persona.guardarAlimento(alpiste)})
-	game.whenCollideDo(manzana, {persona => persona.guardarAlimento(manzana)})
-	game.whenCollideDo(pepita, {persona => persona.darDeComerA(pepita)})
+	//game.whenCollideDo(alpiste, {persona => persona.guardarAlimento(alpiste)})
+	game.whenCollideDo(roque, {alimento => alimento.serGuardadoEnRoque()})
+	//game.whenCollideDo(manzana, {persona => persona.guardarAlimento(manzana)})
+	game.whenCollideDo(roque, {ave => ave.serAlimentado()})
 
 //	TECLADO
 	keyboard.v().onPressDo { pepita.volaHacia(villaGesell) }

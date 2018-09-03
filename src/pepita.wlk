@@ -1,5 +1,5 @@
 import ciudades.*
-
+import roques.*
 object pepita {
 	var property energia = 100
 	var property ciudad = null 
@@ -49,4 +49,8 @@ object pepita {
 			imagen = "pepita.png"
 		}
 	}	
+	method serAlimentado(){
+		roque.darDeComerA(self)
+	}
+	method serGuardadoEnRoque(){} // para evitar error de que no entiende el mensaje
 }

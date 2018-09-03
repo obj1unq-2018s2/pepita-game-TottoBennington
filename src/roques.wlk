@@ -23,8 +23,8 @@ object roque {
 			game.removeVisual(comida) // quito visual
 		}else if(comidaDeAves != null && comida != null){ // si tenemos una comida guardada & hay comida alli
 			game.removeVisual(comida)// quito la visual de la comida
-			game.addVisualIn(comidaDeAves, posicion.clone()) // agregamos la imagen de la comida que teniamos previamente
-
+			game.addVisualIn(comidaDeAves, posicion.right(1)) // lo ponemos a la derecha para evitar el loop de cuando queda en el mismo lugar
+			//game.addVisualIn(comidaDeAves, posicion.clone())
 		}
 		comidaDeAves = comida
 	}

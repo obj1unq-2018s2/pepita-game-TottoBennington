@@ -6,4 +6,4 @@ object manzana {
 object alpiste {
 	const property imagen = "alpiste.png"
 	method energia() = 5
-}
+	}

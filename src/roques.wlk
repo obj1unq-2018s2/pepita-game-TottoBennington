@@ -24,7 +24,7 @@ object roque {
 		}else if(comidaDeAves != null && comida != null){ // si tenemos una comida guardada & hay comida alli
 			game.removeVisual(comida)// quito la visual de la comida
 			game.addVisualIn(comidaDeAves, posicion.right(1)) // lo ponemos a la derecha para evitar el loop de cuando queda en el mismo lugar
-			//game.addVisualIn(comidaDeAves, posicion.clone())
+			//game.addVisualIn(comidaDeAves, posicion.clone()) //genera loop infinito cuando roque tenia comida y esta parado sobre otra
 		}
 		comidaDeAves = comida
 	}
@@ -34,8 +34,6 @@ object roque {
 			ave.come(comidaDeAves) // alimentamos
 			game.addVisualIn(comidaDeAves, random)// hacemos que la imagen de dicha comida re aparezca en un lugar aleatorio
 			comidaDeAves = null // vaciamos nuestro storage de comida
-		}else{
-			game.say(self,"Por el momento no tenemos más comida")
 		}
 	}
 }
